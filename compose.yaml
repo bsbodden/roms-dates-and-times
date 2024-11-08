@@ -1,1 +1,10 @@
+name: redis-roms-temporal
 services:
+  redis:
+    image: "redis/redis-stack:edge"
+    ports:
+      - "6379:6379"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
